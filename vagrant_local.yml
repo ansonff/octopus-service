@@ -1,0 +1,6 @@
+cpu_cores: 1
+ram_size: 3072
+# ram_size: 4096
+svn:
+  local_g2_root_dir: D:\svn\cbog2\branches\MEP-16.0.x
+  local_project_specific_root_dir: D:\svn\g2-mep\trunk
