@@ -1,6 +1,9 @@
-cpu_cores: 1
+cpu_cores: 2
 ram_size: 3072
 # ram_size: 4096
+sync-folder:
+  vagrant-share: D:\Vagrant\vagrant-share
+  vagrant-common: D:\Vagrant\vagrant-common
 svn:
   local_g2_root_dir: D:\svn\cbog2\branches\MEP-16.0.x
   local_project_specific_root_dir: D:\svn\g2-mep\trunk

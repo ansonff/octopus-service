@@ -3,8 +3,8 @@
 
 require 'yaml'
 settings = YAML.load_file 'vagrant_local.yml'
-local_g2_root_dir = settings['svn']['local_g2_root_dir']
-local_project_specific_root_dir = settings['svn']['local_project_specific_root_dir']
+vagrant_share = settings['sync-folder']['vagrant-share']
+vagrant_common = settings['sync-folder']['vagrant-common']
 cpu_cores = settings['cpu_cores']
 ram_size = settings['ram_size']
 
@@ -18,13 +18,12 @@ end
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "mep-dev-2019-08-09-03-34-virtualbox.box"
-  # config.vm.box_url = "http://10.46.3.208/vagrant/boxes/octopus/cbo-g2-mep-dev/mep-dev-2019-08-09-03-34-virtualbox.box"
-  config.vm.box_url = "http://10.46.3.208/vagrant/boxes/octopus/redhat_docker-virtualbox.box"
+  config.vm.box = "redhat_docker-virtualbox.box"
+  # config.vm.box_url = "http://10.46.3.208/vagrant/boxes/octopus/redhat_docker-virtualbox.box"
+  config.vm.box_url = "H:\Backup\vagrant\box\redhat_docker-virtualbox.box.20191014"
 
-  config.vm.synced_folder local_g2_root_dir, "/mnt/svn_g2_root"
-  config.vm.synced_folder local_project_specific_root_dir, "/mnt/svn_project_specific_root"
-  
+  config.vm.synced_folder vagrant_share, "/vagrant-share"
+  config.vm.synced_folder vagrant_common, "/vagrant-common"
 
   # config.vm.network "forwarded_port", id: "Portainer", guest: 19000, host: 19000, host_ip: "127.0.0.1"
   config.vm.network "forwarded_port", id: "ssh", guest: 22, host: 22222, host_ip: "127.0.0.1"

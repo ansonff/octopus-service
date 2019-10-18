@@ -1,9 +1,10 @@
 version: '3'
-
 services:
+
   redis:
     build: .
     image: redis-custom:5.0.5
+    container_name: redis1
     ports:
       - "6379:6379"
 
