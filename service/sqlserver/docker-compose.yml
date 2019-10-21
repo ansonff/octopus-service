@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  sqlserver:
+    #image: mcr.microsoft.com/mssql/server:2017-GA-ubuntu
+    #image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    image: mssql/server:2017-latest-ubuntu
+    container_name: sqlserver1
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "P@ssw0rd"
+      ACCEPT_EULA: "Y"

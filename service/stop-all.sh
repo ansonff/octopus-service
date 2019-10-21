@@ -1,9 +1,4 @@
-docker stop sql1
-docker stop emqx
-
-
-cd /vagrant/service/kafka/
-docker-compose stop
-
-cd /vagrant/service/redis/
-docker-compose stop
+/vagrant/service/kafka/stop-kafka.sh
+/vagrant/service/redis/stop-redis.sh
+/vagrant/service/sqlserver/stop-sqlserver.sh
+# /vagrant/service/emqx/stop-emqx.sh

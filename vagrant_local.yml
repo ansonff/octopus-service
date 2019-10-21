@@ -1,5 +1,6 @@
-cpu_cores: 2
-ram_size: 3072
+cpu_cores: 1
+ram_size: 2560
+# ram_size: 3072
 # ram_size: 4096
 sync-folder:
   vagrant-share: D:\Vagrant\vagrant-share

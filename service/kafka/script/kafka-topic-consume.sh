@@ -1,4 +1,7 @@
-
 topic=$1
-cd /vagrant/software/kafka/
+if [ -z "$topic" ]
+then
+      $topic="reply.grk.sjcp.tapin"
+fi
+cd /vagrant-share/software/kafka/
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic $topic --from-beginning
